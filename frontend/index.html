@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- lang="en" helps screen readers understand the language -->
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- UTF-8 supports all characters -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Makes page responsive on mobile -->
+
+  <title>TaskForge</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Links our CSS file -->
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-label">FRONTEND PROTOTYPE</span>
+      <!-- Small label above app name -->
+      <h1 class="nav-title">TaskForge</h1>
+      <!-- Main app name -->
+    </div>
+    <button class="theme-btn" id="themeBtn">Light mode</button>
+    <!-- Theme toggle — functionality added later -->
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+    <div class="card">
+
+      <!-- ===== TAB SWITCHER ===== -->
+      <div class="tabs">
+        <button class="tab-btn active" id="loginTab">Login</button>
+        <!-- Login tab is ACTIVE by default -->
+
+        <button class="tab-btn" id="signupTab">Sign up</button>
+        <!-- Sign up tab is inactive by default -->
+      </div>
+
+      <!-- ===== LOGIN FORM ===== -->
+      <!-- Shown by default because Login tab is active -->
+      <form id="loginForm" class="form">
+
+        <!-- EMAIL FIELD -->
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <!-- for="loginEmail" links label to input for accessibility -->
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="you@example.com"
+            class="form-input"
+          />
+          <!-- type="email" validates email format automatically -->
+        </div>
+
+        <!-- PASSWORD FIELD -->
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Your password"
+            class="form-input"
+          />
+          <!-- type="password" hides characters as user types -->
+        </div>
+
+        <!-- ERROR MESSAGE — hidden until JS fills it -->
+        <p class="error-msg" id="loginError"></p>
+
+        <!-- SUCCESS MESSAGE — hidden until JS fills it -->
+        <p class="success-msg" id="loginSuccess"></p>
+
+        <!-- SUBMIT BUTTON -->
+        <button type="submit" class="submit-btn">Login</button>
+
+      </form>
+      <!-- End of Login Form -->
+
+      <!-- ===== REGISTER FORM ===== -->
+      <!-- Hidden by default using display:none in CSS -->
+      <!-- Will be shown when user clicks "Sign up" tab -->
+      <form id="registerForm" class="form hidden">
+
+        <!-- NAME FIELD -->
+        <div class="form-group">
+          <label for="regName">Name</label>
+          <input
+            type="text"
+            id="regName"
+            placeholder="Your name"
+            class="form-input"
+          />
+          <!-- type="text" accepts any text input -->
+        </div>
+
+        <!-- EMAIL FIELD -->
+        <div class="form-group">
+          <label for="regEmail">Email</label>
+          <input
+            type="email"
+            id="regEmail"
+            placeholder="you@example.com"
+            class="form-input"
+          />
+        </div>
+
+        <!-- PASSWORD FIELD -->
+        <div class="form-group">
+          <label for="regPassword">Password</label>
+          <input
+            type="password"
+            id="regPassword"
+            placeholder="At least 6 characters"
+            class="form-input"
+          />
+        </div>
+
+        <!-- ERROR MESSAGE -->
+        <p class="error-msg" id="registerError"></p>
+
+        <!-- SUCCESS MESSAGE -->
+        <p class="success-msg" id="registerSuccess"></p>
+
+        <!-- SUBMIT BUTTON -->
+        <button type="submit" class="submit-btn">Create account</button>
+
+      </form>
+      <!-- End of Register Form -->
+
+    </div>
+    <!-- End of card -->
+  </main>
+
+  <script src="app.js"></script>
+  <!-- JS is at the bottom so HTML loads first before JS runs -->
+
+</body>
+</html>
+

@@ -1,0 +1,328 @@
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Includes padding/border inside element width — prevents overflow */
+}
+
+body {
+  background: radial-gradient(ellipse at top left, #1a3a2a 0%, #0d1f17 40%, #0a0f0d 100%);
+  /* Dark green gradient background matching the design */
+
+  min-height: 100vh;
+  /* Fills the full screen height */
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Clean modern font */
+
+  color: #ffffff;
+  /* Default white text for dark background */
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  /* Places brand and theme button side by side */
+
+  justify-content: space-between;
+  /* Brand on left, button on right */
+
+  align-items: flex-start;
+  padding: 24px 40px;
+}
+
+.nav-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #8a9e94;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  /* Small styled label above the app name */
+}
+
+.nav-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -1px;
+  /* Bold large app name */
+}
+
+.theme-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+  transition: background 0.2s;
+  /* Smooth hover effect */
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  /* Brighter on hover */
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  display: flex;
+  justify-content: flex-start;
+  /* Card stays on the left side */
+
+  align-items: flex-start;
+  padding: 20px 40px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: rgba(30, 45, 38, 0.85);
+  /* Dark green semi-transparent card */
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 28px;
+  width: 320px;
+  /* Fixed width card */
+
+  backdrop-filter: blur(10px);
+  /* Frosted glass blur effect behind the card */
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.tab-btn {
+  flex: 1;
+  /* Both tabs share equal width */
+
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  background: transparent;
+  color: #8a9e94;
+  /* Muted color for inactive tab */
+}
+
+.tab-btn.active {
+  background: #2dd4a0;
+  /* Teal highlight for active tab */
+  color: #ffffff;
+}
+
+/* ===== FORM ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  /* Stacks fields vertically */
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  /* Label sits above input */
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #c5d5ce;
+  font-weight: 500;
+}
+
+.form-input {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  /* Removes default browser blue outline */
+  transition: border-color 0.2s;
+}
+
+.form-input::placeholder {
+  color: #5a7a6e;
+  /* Muted placeholder text */
+}
+
+.form-input:focus {
+  border-color: #2dd4a0;
+  /* Teal border when input is focused */
+}
+
+/* ===== MESSAGES ===== */
+.error-msg {
+  color: #ff6b6b;
+  /* Red for errors */
+  font-size: 13px;
+  min-height: 18px;
+  /* Reserves space so layout doesn't jump */
+}
+
+.success-msg {
+  color: #2dd4a0;
+  /* Teal for success */
+  font-size: 13px;
+  min-height: 18px;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.submit-btn {
+  background: linear-gradient(135deg, #2dd4a0, #1aab7a);
+  /* Green gradient button */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  width: 100%;
+  /* Full width button */
+}
+
+.submit-btn:hover {
+  opacity: 0.88;
+  /* Slight fade on hover */
+}
+
+/* ===== HIDDEN CLASS ===== */
+.hidden {
+  display: none;
+  /* Completely hides the element — used to toggle between forms */
+}
+
+/* ===================================================
+   THEME — LIGHT MODE OVERRIDES
+   When JavaScript adds class "light-mode" to <body>,
+   all these styles override the default dark styles.
+   The trick: .light-mode .element beats .element alone
+=================================================== */
+
+/* ===== BODY BACKGROUND ===== */
+.light-mode {
+  background: radial-gradient(ellipse at top left, #e8f5f0 0%, #f0f7f4 40%, #ffffff 100%);
+  /* Light green-white gradient replaces the dark background */
+
+  color: #1a2e25;
+  /* Dark text color for readability on light background */
+}
+
+/* ===== NAVBAR ===== */
+.light-mode .nav-label {
+  color: #4a7a64;
+  /* Darker muted green for the small label */
+}
+
+.light-mode .nav-title {
+  color: #1a2e25;
+  /* Dark color for app name */
+}
+
+.light-mode .theme-btn {
+  background: rgba(0, 0, 0, 0.08);
+  /* Light grey background for the button */
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #1a2e25;
+  /* Dark text on light button */
+}
+
+.light-mode .theme-btn:hover {
+  background: rgba(0, 0, 0, 0.15);
+  /* Slightly darker on hover */
+}
+
+/* ===== CARD ===== */
+.light-mode .card {
+  background: rgba(255, 255, 255, 0.9);
+  /* White card on light background */
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* Subtle dark border */
+
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  /* Soft shadow to lift card off background */
+}
+
+/* ===== TABS ===== */
+.light-mode .tabs {
+  background: rgba(0, 0, 0, 0.06);
+  /* Light grey tab container */
+}
+
+.light-mode .tab-btn {
+  color: #4a7a64;
+  /* Muted green for inactive tab text */
+}
+
+.light-mode .tab-btn.active {
+  background: #2dd4a0;
+  color: #ffffff;
+  /* Active tab stays the same teal — looks great on both themes! */
+}
+
+/* ===== FORM LABELS ===== */
+.light-mode .form-group label {
+  color: #2a4a3a;
+  /* Dark green label text */
+}
+
+/* ===== INPUTS ===== */
+.light-mode .form-input {
+  background: rgba(0, 0, 0, 0.04);
+  /* Very light grey input background */
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #1a2e25;
+  /* Dark text as user types */
+}
+
+.light-mode .form-input::placeholder {
+  color: #8ab0a0;
+  /* Muted placeholder on light background */
+}
+
+.light-mode .form-input:focus {
+  border-color: #2dd4a0;
+  /* Same teal focus border — consistent across themes */
+}
+
+/* ===== MESSAGES ===== */
+.light-mode .error-msg {
+  color: #d93025;
+  /* Slightly deeper red for better readability on light bg */
+}
+
+.light-mode .success-msg {
+  color: #1a8a6a;
+  /* Deeper teal/green for success on light background */
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.light-mode .submit-btn {
+  background: linear-gradient(135deg, #2dd4a0, #1aab7a);
+  /* Button stays the same — it already looks great! */
+}
+
+
+
