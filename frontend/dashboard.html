@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskForge – Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-label">DASHBOARD</span>
+      <h1 class="nav-title">TaskForge</h1>
+    </div>
+    <button class="theme-btn" id="themeBtn">Light mode</button>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content dashboard-main">
+
+    <!-- ===== WELCOME CARD ===== -->
+    <div class="card dashboard-card">
+
+      <!-- Welcome Header -->
+      <div class="dashboard-header">
+        <!-- Avatar circle showing first letter of user's name -->
+        <div class="avatar" id="userAvatar">?</div>
+        <!-- Filled by JS with first letter of name -->
+
+        <div class="dashboard-welcome">
+          <p class="welcome-label">Welcome back 👋</p>
+          <h2 class="welcome-name" id="welcomeName">Loading...</h2>
+          <!-- Filled by JS with user's name -->
+        </div>
+      </div>
+
+      <!-- Divider line -->
+      <div class="divider"></div>
+
+      <!-- ===== USER PROFILE INFO ===== -->
+      <div class="profile-section">
+        <h3 class="section-title">Profile Information</h3>
+
+        <!-- Name Row -->
+        <div class="profile-row">
+          <div class="profile-icon">👤</div>
+          <div class="profile-details">
+            <span class="profile-label">Full Name</span>
+            <span class="profile-value" id="profileName">–</span>
+            <!-- Filled by JS -->
+          </div>
+        </div>
+
+        <!-- Email Row -->
+        <div class="profile-row">
+          <div class="profile-icon">✉️</div>
+          <div class="profile-details">
+            <span class="profile-label">Email Address</span>
+            <span class="profile-value" id="profileEmail">–</span>
+            <!-- Filled by JS -->
+          </div>
+        </div>
+
+        <!-- Member Since Row -->
+        <div class="profile-row">
+          <div class="profile-icon">📅</div>
+          <div class="profile-details">
+            <span class="profile-label">Member Since</span>
+            <span class="profile-value" id="profileDate">–</span>
+            <!-- Filled by JS with formatted date -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Divider line -->
+      <div class="divider"></div>
+
+      <!-- ===== LOGOUT SECTION ===== -->
+      <div class="logout-section">
+        <p class="logout-hint">
+          Ready to leave? Click below to safely log out.
+        </p>
+
+        <!-- Prominent Logout Button -->
+        <button class="logout-btn" id="logoutBtn">
+          🚪 Logout
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/auth-storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/dashboard.js"></script>
+
+</body>
+</html>
+
